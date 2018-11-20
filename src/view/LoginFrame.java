@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
@@ -25,10 +26,10 @@ public class LoginFrame extends JFrame {
     private JLabel jlRegPassword;
 
     private JTextField jtUser;
-    private JTextField jtPassword;
+    private JPasswordField jtPassword;
     private JTextField jtRegKey;
     private JTextField jtRegUser;
-    private JTextField jtRegPassword;
+    private JPasswordField jtRegPassword;
 
     private JButton jbLogin;
     private JButton jbRegister;
@@ -60,10 +61,10 @@ public class LoginFrame extends JFrame {
         jlRegPassword = new JLabel("Password:");
 
         jtUser = new JTextField();
-        jtPassword = new JTextField();
+        jtPassword = new JPasswordField();
         jtRegKey = new JTextField();
         jtRegUser = new JTextField();
-        jtRegPassword = new JTextField();
+        jtRegPassword = new JPasswordField();
 
         jbLogin = new JButton("Login");
         jbRegister = new JButton("Register");

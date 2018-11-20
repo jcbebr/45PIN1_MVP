@@ -1,5 +1,7 @@
 package view;
 
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author José Carlos
@@ -13,7 +15,8 @@ public class RegisterTeacherPanel extends javax.swing.JPanel {
         this.ACTIVITIES = new String[]{"Ensino", "Pedagógica", "Orientação", "Extenção", "Administrativa", "Capacitação", "Licensa", "Complementar", "Projeto de Ensino", "Projeto de Pesquisa"};
         this.FRAME = frame;
         initComponents();
-        
+
+        setActivitiesEnabled();
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(ACTIVITIES));
     }
 
@@ -40,7 +43,7 @@ public class RegisterTeacherPanel extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jbActNew = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jList1 = new javax.swing.JList<>(model);
         jbActEdit = new javax.swing.JButton();
         jbActDelete = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
@@ -132,15 +135,20 @@ public class RegisterTeacherPanel extends javax.swing.JPanel {
         jLabel8.setText("Atividades");
 
         jbActNew.setText("Nova Atividade");
-
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = {};
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        jbActNew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbActNewActionPerformed(evt);
+            }
         });
+
         jScrollPane1.setViewportView(jList1);
 
         jbActEdit.setText("Editar Atividade");
+        jbActEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbActEditActionPerformed(evt);
+            }
+        });
 
         jbActDelete.setText("Excluir Ativiade");
 
@@ -175,7 +183,7 @@ public class RegisterTeacherPanel extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
+                                .addGap(0, 0, 0)
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -265,7 +273,13 @@ public class RegisterTeacherPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cleanData(){
+    private void cleanActivities() {
+        jComboBox1.setSelectedIndex(0);
+        jTextField8.setText("");
+        jTextField9.setText("");
+    }
+
+    private void cleanData() {
         jTextField1.setText("");
         jTextField2.setText("");
         jTextField3.setText("");
@@ -273,10 +287,10 @@ public class RegisterTeacherPanel extends javax.swing.JPanel {
         jTextField5.setText("");
         jTextField6.setText("");
         jTextField7.setText("");
-        jTextField8.setText("");
-        jTextField9.setText("");
+        jList1.removeAll();
+        cleanActivities();
     }
-    
+
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
         cleanData();
         FRAME.goToMainScreen();
@@ -286,6 +300,34 @@ public class RegisterTeacherPanel extends javax.swing.JPanel {
         cleanData();
         FRAME.goToMainScreen();
     }//GEN-LAST:event_jbCadTeacherActionPerformed
+
+    private void setActivitiesEnabled() {
+        boolean check = true;
+        if (jbActRegister.isEnabled()) {
+            check = false;
+        }
+        jLabel9.setEnabled(check);
+        jLabel10.setEnabled(check);
+        jLabel11.setEnabled(check);
+        jComboBox1.setEnabled(check);
+        jTextField8.setEnabled(check);
+        jTextField9.setEnabled(check);
+        jbActRegister.setEnabled(check);
+    }
+
+    private void jbActNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbActNewActionPerformed
+
+        setActivitiesEnabled();
+    }//GEN-LAST:event_jbActNewActionPerformed
+
+    private void jbActEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbActEditActionPerformed
+        
+        jList1.getSelectedIndex();
+        
+        model.addElement("asda");
+        
+        setActivitiesEnabled();
+    }//GEN-LAST:event_jbActEditActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -301,6 +343,7 @@ public class RegisterTeacherPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private DefaultListModel<String> model = new DefaultListModel<>();
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

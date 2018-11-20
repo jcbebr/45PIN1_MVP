@@ -78,9 +78,9 @@ public class MainFrame extends JFrame {
     }
 
     public void goToMainScreen() {
-        for (int j = 0; j < menuPanels.length; j++) {
-            menuPanels[j].setVisible(false);
-            menuPanels[j].setEnabled(false);
+        for (JPanel menuPanel : menuPanels) {
+            menuPanel.setVisible(false);
+            menuPanel.setEnabled(false);
         }
     }
 

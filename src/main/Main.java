@@ -2,7 +2,7 @@ package main;
 
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import view.MainFrame;
+import view.LoginFrame;
 
 /**
  *
@@ -22,9 +22,9 @@ public class Main {
         } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException exc) {
             exc.printStackTrace();
         }
-        MainFrame main = new MainFrame();
+        //MainFrame main = new MainFrame();
         
-        //LoginFrame lf = new LoginFrame();
+        LoginFrame lf = new LoginFrame();
         
     }
     
