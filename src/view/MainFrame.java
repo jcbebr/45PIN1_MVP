@@ -30,7 +30,7 @@ public class MainFrame extends JFrame {
     public MainFrame() {
         super();
 
-        mainDimension = new Dimension(750, 550); // imagem 665 , 545
+        mainDimension = new Dimension(650, 500); // imagem 665 , 545
         initComponents();
 
         super.setTitle("Sistema gerenciador do cartão fidelidade");

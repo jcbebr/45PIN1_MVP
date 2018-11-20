@@ -89,19 +89,6 @@ public class MainMenu extends JMenuBar {
             }
         });
 
-        //Istancia os Listeners paras o itens de menu 
-        /*ActionListener listenerItCadClientes = new ActionListenerMenuCadCliente(tela);
-        ActionListener listenerItCadCompras = new ActionListenerMenuCadCompra(tela);
-        ActionListener listenerItCodigo = new ActionListenerMenuBuscaCliente(tela);
-        ActionListener listenerItOpeTrocaPontos = new ActionListenerMenuOpeTrocaPontos(tela);
-        ActionListener listenerItOpeRelatorios = new ActionListenerMenuOpeRelatorios(tela);
-        
-        //Adiciona o Listener para os itens
-        itCadClientes.addActionListener(listenerItCadClientes);
-        itCadCompras.addActionListener(listenerItCadCompras);
-        itBuscaCliente.addActionListener(listenerItCodigo);
-        itOpeTrocaPontos.addActionListener(listenerItOpeTrocaPontos);
-        itOpeRelatorio.addActionListener(listenerItOpeRelatorios);*/
     }
 
 }

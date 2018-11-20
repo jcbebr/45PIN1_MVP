@@ -32,11 +32,11 @@ public class Files {
             first = true;
         }
 
-        RandomAccessFile arquivo = null;
+        RandomAccessFile file = null;
         try {
-            arquivo = new RandomAccessFile(endereco, "rw");
+            file = new RandomAccessFile(endereco, "rw");
             if (first) {
-                arquivo.writeBoolean(false);
+                file.writeBoolean(false);
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Files.class.getName()).log(Level.SEVERE, null, ex);
@@ -44,7 +44,7 @@ public class Files {
             Logger.getLogger(Files.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        return arquivo;
+        return file;
     }
 
     private static String readChars(RandomAccessFile arquivo) throws IOException {
