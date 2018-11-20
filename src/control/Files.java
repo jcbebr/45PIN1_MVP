@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -66,12 +67,15 @@ public class Files {
                 String filePassword = readChars(arquivo);
 
                 if (!fileUser.equals(user)) {
+                    JOptionPane.showMessageDialog(null, "Usuário incorreto", "Erro", JOptionPane.ERROR_MESSAGE);
                     return false;
                 }
                 if (!filePassword.equals(password)) {
+                    JOptionPane.showMessageDialog(null, "Senha incorreta", "Erro", JOptionPane.ERROR_MESSAGE);
                     return false;
                 }
             } else {
+                JOptionPane.showMessageDialog(null, "Informações incorretas", "Erro", JOptionPane.ERROR_MESSAGE);
                 return false;
             }
 
@@ -96,6 +100,7 @@ public class Files {
                 arquivo.writeChars(String.format("%1$10s", user));
                 arquivo.writeChars(String.format("%1$10s", password));
             } else {
+                JOptionPane.showMessageDialog(null, "Chave incorreta ou já usada", "Erro", JOptionPane.ERROR_MESSAGE);
                 return false;
             }
 

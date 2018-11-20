@@ -61,7 +61,7 @@ public class MainFrame extends JFrame {
 
         menuPanels = new JPanel[4];
         initMenuPanel(new RegisterTeacherPanel(this), 0);
-        initMenuPanel(new JPanel(), 1);
+        initMenuPanel(new ChangeOwnDataPanel(this), 1);
         initMenuPanel(new JPanel(), 2);
         initMenuPanel(new JPanel(), 3);
         

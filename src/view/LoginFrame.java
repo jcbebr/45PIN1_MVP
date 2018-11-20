@@ -170,8 +170,6 @@ public class LoginFrame extends JFrame {
                 if (Files.doLogin(jtUser.getText(), jtPassword.getText())) {
                     MainFrame main = new MainFrame();
                     dispose();
-                } else {
-                    JOptionPane.showMessageDialog(null, "Informações incorretas", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -191,8 +189,6 @@ public class LoginFrame extends JFrame {
                 if (Files.doRegister(jtRegKey.getText(), jtRegUser.getText(), jtRegPassword.getText())) {
                     setLoginEnabled();
                     setRegisterEnabled();
-                } else {
-                    JOptionPane.showMessageDialog(null, "Chave incorreta ou já cadastrada", "Erro", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });

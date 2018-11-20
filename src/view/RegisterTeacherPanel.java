@@ -10,7 +10,7 @@ public class RegisterTeacherPanel extends javax.swing.JPanel {
 
     private final MainFrame FRAME;
     private final String[] ACTIVITIES;
-    
+
     public RegisterTeacherPanel(MainFrame frame) {
         this.ACTIVITIES = new String[]{"Ensino", "Pedagógica", "Orientação", "Extenção", "Administrativa", "Capacitação", "Licensa", "Complementar", "Projeto de Ensino", "Projeto de Pesquisa"};
         this.FRAME = frame;
@@ -157,6 +157,11 @@ public class RegisterTeacherPanel extends javax.swing.JPanel {
         jLabel10.setText("Nome:");
 
         jbActRegister.setText("Gravar Atividade");
+        jbActRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbActRegisterActionPerformed(evt);
+            }
+        });
 
         jLabel11.setText("Carga Horária:");
 
@@ -321,13 +326,17 @@ public class RegisterTeacherPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jbActNewActionPerformed
 
     private void jbActEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbActEditActionPerformed
-        
+
         jList1.getSelectedIndex();
-        
-        model.addElement("asda");
-        
+
         setActivitiesEnabled();
     }//GEN-LAST:event_jbActEditActionPerformed
+
+    private void jbActRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbActRegisterActionPerformed
+
+        model.addElement("asda");
+
+    }//GEN-LAST:event_jbActRegisterActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
