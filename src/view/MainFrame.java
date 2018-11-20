@@ -22,7 +22,7 @@ public class MainFrame extends JFrame {
     private Container contentPane;
     private JMenuBar mainMenu;
 
-    private JPanel[] menuPanels;
+    private MenuPanel[] menuPanels;
 
     /**
      * Construtor da classe Frame Sistema.
@@ -59,15 +59,15 @@ public class MainFrame extends JFrame {
         mainMenu = new MainMenu(this);
         super.setJMenuBar(mainMenu);
 
-        menuPanels = new JPanel[4];
+        menuPanels = new MenuPanel[4];
         initMenuPanel(new RegisterTeacherPanel(this), 0);
         initMenuPanel(new ChangeOwnDataPanel(this), 1);
-        initMenuPanel(new JPanel(), 2);
-        initMenuPanel(new JPanel(), 3);
-        
+        //initMenuPanel(new JPanel(), 2);
+        //initMenuPanel(new JPanel(), 3);
+
     }
-    
-    private void initMenuPanel(JPanel jpanel, int i){
+
+    private void initMenuPanel(MenuPanel jpanel, int i) {
         menuPanels[i] = jpanel;
         //jps[i].setBackground(Color.BLACK);
         mainPanel.add(menuPanels[i]);
@@ -78,10 +78,12 @@ public class MainFrame extends JFrame {
     }
 
     public void goToMainScreen() {
-        for (JPanel menuPanel : menuPanels) {
-            menuPanel.setVisible(false);
-            menuPanel.setEnabled(false);
+        for (int i = 0; i < 2; i++) {
+            menuPanels[i].setVisible(false);
+            menuPanels[i].setEnabled(false);
+            menuPanels[i].cleanData();
         }
+
     }
 
     public void changeJPanel(int i) {

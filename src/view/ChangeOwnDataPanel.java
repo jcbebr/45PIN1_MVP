@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  *
  * @author José Carlos
  */
-public class ChangeOwnDataPanel extends javax.swing.JPanel {
+public class ChangeOwnDataPanel extends MenuPanel {
 
     private final MainFrame FRAME;
 
@@ -166,7 +166,7 @@ public class ChangeOwnDataPanel extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         if (Files.doLogin(jTextField1.getText(), jTextField2.getText())) {
-            
+
             setNewInfoEnabled();
             setOldInfoEnabled();
             jTextField3.requestFocus();
@@ -175,19 +175,23 @@ public class ChangeOwnDataPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        cleanData();
+        FRAME.goToMainScreen();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    public void cleanData() {
         jButton1.setEnabled(false);
         jButton2.setEnabled(true);
         setNewInfoEnabled();
         setOldInfoEnabled();
-        FRAME.goToMainScreen();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+
         if (Files.doRegister("666", jTextField3.getText(), jTextField4.getText())) {
             JOptionPane.showMessageDialog(null, "Dados alterados com sucesso", "Erro", JOptionPane.INFORMATION_MESSAGE);
         }
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void setOldInfoEnabled() {

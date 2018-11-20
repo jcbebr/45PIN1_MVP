@@ -6,7 +6,7 @@ import javax.swing.DefaultListModel;
  *
  * @author José Carlos
  */
-public class RegisterTeacherPanel extends javax.swing.JPanel {
+public class RegisterTeacherPanel extends MenuPanel {
 
     private final MainFrame FRAME;
     private final String[] ACTIVITIES;
@@ -284,7 +284,8 @@ public class RegisterTeacherPanel extends javax.swing.JPanel {
         jTextField9.setText("");
     }
 
-    private void cleanData() {
+    @Override
+    public void cleanData() {
         jTextField1.setText("");
         jTextField2.setText("");
         jTextField3.setText("");
@@ -292,7 +293,7 @@ public class RegisterTeacherPanel extends javax.swing.JPanel {
         jTextField5.setText("");
         jTextField6.setText("");
         jTextField7.setText("");
-        jList1.removeAll();
+        model.removeAllElements();
         cleanActivities();
     }
 
