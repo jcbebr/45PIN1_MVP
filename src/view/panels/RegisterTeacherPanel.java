@@ -2,6 +2,7 @@ package view.panels;
 
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import model.Activitie;
 import model.ActivitiesTypes;
 import model.Category;
@@ -28,12 +29,12 @@ public class RegisterTeacherPanel extends MenuPanel {
 
         setActivitiesEnabled();
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(Center.getStringVetor()));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(Clas.getStringVetor()));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(Titulation.getStringVetor()));
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(Departament.getStringVetor()));
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(Category.getStringVetor()));
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(ActivitiesTypes.getStringVetor()));
+        Combo_centro.setModel(new javax.swing.DefaultComboBoxModel<>(Center.getStringVetor()));
+        Combo_classe.setModel(new javax.swing.DefaultComboBoxModel<>(Clas.getStringVetor()));
+        Combo_titulacao.setModel(new javax.swing.DefaultComboBoxModel<>(Titulation.getStringVetor()));
+        Combo_departamento.setModel(new javax.swing.DefaultComboBoxModel<>(Departament.getStringVetor()));
+        Combo_categoria.setModel(new javax.swing.DefaultComboBoxModel<>(Category.getStringVetor()));
+        Combo_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(ActivitiesTypes.getStringVetor()));
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -41,7 +42,7 @@ public class RegisterTeacherPanel extends MenuPanel {
 
         jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
-        jTextField4 = new javax.swing.JTextField();
+        Tf_regime = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -49,12 +50,12 @@ public class RegisterTeacherPanel extends MenuPanel {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        Tf_Nome = new javax.swing.JTextField();
+        Combo_centro = new javax.swing.JComboBox<>();
+        Combo_classe = new javax.swing.JComboBox<>();
+        Combo_titulacao = new javax.swing.JComboBox<>();
+        Combo_departamento = new javax.swing.JComboBox<>();
+        Combo_categoria = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jbActNew = new javax.swing.JButton();
@@ -63,10 +64,10 @@ public class RegisterTeacherPanel extends MenuPanel {
         jbActEdit = new javax.swing.JButton();
         jbActDelete = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox6 = new javax.swing.JComboBox<>();
+        Combo_tipo = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
+        TF_cargaH = new javax.swing.JTextField();
+        TF_nomeAtiv = new javax.swing.JTextField();
         jbActRegister = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jbCancelar = new javax.swing.JButton();
@@ -95,8 +96,8 @@ public class RegisterTeacherPanel extends MenuPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField4)
+                    .addComponent(Tf_Nome)
+                    .addComponent(Tf_regime)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
@@ -107,11 +108,11 @@ public class RegisterTeacherPanel extends MenuPanel {
                             .addComponent(jLabel4)
                             .addComponent(jLabel5))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Combo_centro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Combo_classe, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Combo_titulacao, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Combo_departamento, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Combo_categoria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -120,31 +121,31 @@ public class RegisterTeacherPanel extends MenuPanel {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Tf_Nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Combo_centro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Combo_classe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Tf_regime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Combo_titulacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Combo_departamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Combo_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -188,20 +189,18 @@ public class RegisterTeacherPanel extends MenuPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField9)
+                    .addComponent(TF_nomeAtiv)
                     .addComponent(jScrollPane1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jbActRegister))
+                    .addComponent(jbActRegister, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jComboBox6, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Combo_tipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField8)
+                            .addComponent(TF_cargaH)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(27, 27, 27))))
@@ -236,12 +235,12 @@ public class RegisterTeacherPanel extends MenuPanel {
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Combo_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TF_cargaH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TF_nomeAtiv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jbActRegister)
                 .addContainerGap(38, Short.MAX_VALUE))
@@ -296,15 +295,15 @@ public class RegisterTeacherPanel extends MenuPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cleanActivities() {
-        jComboBox6.setSelectedIndex(0);
-        jTextField8.setText("");
-        jTextField9.setText("");
+        Combo_tipo.setSelectedIndex(0);
+        TF_cargaH.setText("");
+        TF_nomeAtiv.setText("");
     }
 
     @Override
     public void cleanData() {
-        jTextField1.setText("");
-        jTextField4.setText("");
+        Tf_Nome.setText("");
+        Tf_regime.setText("");
         model.removeAllElements();
         cleanActivities();
     }
@@ -315,8 +314,10 @@ public class RegisterTeacherPanel extends MenuPanel {
     }//GEN-LAST:event_jbCancelarActionPerformed
 
     private void jbCadTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCadTeacherActionPerformed
+        control.TeacherFile.writeTeacher(Tf_Nome.getText(), Combo_centro.getSelectedItem().toString(), Combo_classe.getSelectedItem().toString(), Tf_regime.getText(), Combo_titulacao.getSelectedItem().toString(),
+                Combo_departamento.getSelectedItem().toString(), Combo_categoria.getSelectedItem().toString());
         cleanData();
-        FRAME.goToMainScreen();
+        JOptionPane.showMessageDialog(null, "Professor cadastrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jbCadTeacherActionPerformed
 
     private void setActivitiesEnabled() {
@@ -327,9 +328,9 @@ public class RegisterTeacherPanel extends MenuPanel {
         jLabel9.setEnabled(check);
         jLabel10.setEnabled(check);
         jLabel11.setEnabled(check);
-        jComboBox6.setEnabled(check);
-        jTextField8.setEnabled(check);
-        jTextField9.setEnabled(check);
+        Combo_tipo.setEnabled(check);
+        TF_cargaH.setEnabled(check);
+        TF_nomeAtiv.setEnabled(check);
         jbActRegister.setEnabled(check);
     }
 
@@ -348,9 +349,9 @@ public class RegisterTeacherPanel extends MenuPanel {
     private void jbActRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbActRegisterActionPerformed
 
         try {
-            String name = jTextField9.getText();
-            float hours = Float.parseFloat(jTextField8.getText());
-            ActivitiesTypes activitieType = ActivitiesTypes.get(jComboBox6.getSelectedIndex());
+            String name = TF_nomeAtiv.getText();
+            float hours = Float.parseFloat(TF_cargaH.getText());
+            ActivitiesTypes activitieType = ActivitiesTypes.get(Combo_tipo.getSelectedIndex());
             Activitie activitie = new Activitie(name, activitieType, hours);
 
             ArrayList activities = teacher.getActivities();
@@ -368,12 +369,16 @@ public class RegisterTeacherPanel extends MenuPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
+    private javax.swing.JComboBox<String> Combo_categoria;
+    private javax.swing.JComboBox<String> Combo_centro;
+    private javax.swing.JComboBox<String> Combo_classe;
+    private javax.swing.JComboBox<String> Combo_departamento;
+    private javax.swing.JComboBox<String> Combo_tipo;
+    private javax.swing.JComboBox<String> Combo_titulacao;
+    private javax.swing.JTextField TF_cargaH;
+    private javax.swing.JTextField TF_nomeAtiv;
+    private javax.swing.JTextField Tf_Nome;
+    private javax.swing.JTextField Tf_regime;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -391,10 +396,6 @@ public class RegisterTeacherPanel extends MenuPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JButton jbActDelete;
     private javax.swing.JButton jbActEdit;
     private javax.swing.JButton jbActNew;

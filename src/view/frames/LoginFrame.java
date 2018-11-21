@@ -1,6 +1,6 @@
 package view.frames;
 
-import control.Files;
+import control.LoginFile;
 import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
@@ -168,7 +168,7 @@ public class LoginFrame extends JFrame {
         jbLogin.addMouseListener(new ClickListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if (Files.doLogin(jtUser.getText(), jtPassword.getText())) {
+                if (LoginFile.doLogin(jtUser.getText(), jtPassword.getText())) {
                     MainFrame main = new MainFrame();
                     dispose();
                 }
@@ -187,7 +187,7 @@ public class LoginFrame extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 //SE INFORMACOES CORRETAS LIMPA CAMPOS E EXECUTA COMANDOS
-                if (Files.doRegister(jtRegKey.getText(), jtRegUser.getText(), jtRegPassword.getText())) {
+                if (LoginFile.doRegister(jtRegKey.getText(), jtRegUser.getText(), jtRegPassword.getText())) {
                     setLoginEnabled();
                     setRegisterEnabled();
                 }
