@@ -86,7 +86,13 @@ public class SearchPanel extends MenuPanel {
         if (pos == -1){
             JOptionPane.showMessageDialog(null, "Professor não encontrado!", "Nada encontrado", JOptionPane.ERROR_MESSAGE);
         }else{
+            cleanData();
             control.TeacherFile.readPos(pos);//pegar os valores e jogar em alguma tela
+            /*
+            pegar a pos do professor e pegar os dados dele e preencher na outra tela
+            pegar o nome e retirar o array de atividades dele e preencher na outra tela
+            */
+                
         }
         cleanData();
         

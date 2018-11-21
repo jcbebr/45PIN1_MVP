@@ -3,7 +3,7 @@ package view.panels;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
-import model.Activitie;
+import model.Activity;
 import model.ActivitiesTypes;
 import model.Category;
 import model.Center;
@@ -314,6 +314,7 @@ public class RegisterTeacherPanel extends MenuPanel {
     }//GEN-LAST:event_jbCancelarActionPerformed
 
     private void jbCadTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCadTeacherActionPerformed
+
         control.TeacherFile.writeTeacher(Tf_Nome.getText(), Combo_centro.getSelectedItem().toString(), Combo_classe.getSelectedItem().toString(), Tf_regime.getText(), Combo_titulacao.getSelectedItem().toString(),
                 Combo_departamento.getSelectedItem().toString(), Combo_categoria.getSelectedItem().toString());
         cleanData();
@@ -349,21 +350,12 @@ public class RegisterTeacherPanel extends MenuPanel {
     private void jbActRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbActRegisterActionPerformed
 
         try {
-            String name = TF_nomeAtiv.getText();
-            float hours = Float.parseFloat(TF_cargaH.getText());
-            ActivitiesTypes activitieType = ActivitiesTypes.get(Combo_tipo.getSelectedIndex());
-            Activitie activitie = new Activitie(name, activitieType, hours);
-
-            ArrayList activities = teacher.getActivities();
-            activities.add(activitie);
-
-            model.addElement(activitie.getType().toString() + " - " + activitie.getName());
+            control.ActivityFile.writeActivities(Tf_Nome.getText(), TF_nomeAtiv.getText(), TF_cargaH.getText(), Combo_tipo.getSelectedItem().toString());
+            model.addElement(Combo_tipo.getSelectedItem().toString() + " - " + TF_nomeAtiv.getText());
 
         } catch (NumberFormatException numberFormatException) {
             System.out.println(numberFormatException);
         }
-
-        System.out.println(teacher.toString());
 
     }//GEN-LAST:event_jbActRegisterActionPerformed
 
