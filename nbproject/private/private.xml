@@ -3,11 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/view/LoginFrame.java</file>
-            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/view/MainFrame.java</file>
-            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/main/Main.java</file>
-            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/control/Files.java</file>
-            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/view/MainMenu.java</file>
+            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/view/frames/MainFrame.java</file>
+            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/model/Titulation.java</file>
+            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/model/Category.java</file>
+            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/model/Center.java</file>
+            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/model/ActivitiesTypes.java</file>
+            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/model/Departament.java</file>
+            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/model/Teacher.java</file>
+            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/model/Clas.java</file>
+            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/model/Activitie.java</file>
+            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/view/panels/RegisterTeacherPanel.java</file>
         </group>
     </open-files>
 </project-private>
