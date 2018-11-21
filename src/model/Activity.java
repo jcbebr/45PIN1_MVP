@@ -4,13 +4,13 @@ package model;
  *
  * @author José Carlos
  */
-public class Activitie {
+public class Activity {
     
     private String name;
-    private ActivitiesTypes type;
-    private float hours;
+    private String type;
+    private String hours;
 
-    public Activitie(String name, ActivitiesTypes type, float hours) {
+    public Activity(String name, String type, String hours) {
         this.name = name;
         this.type = type;
         this.hours = hours;
@@ -20,11 +20,11 @@ public class Activitie {
         return name;
     }
 
-    public ActivitiesTypes getType() {
+    public String getType() {
         return type;
     }
 
-    public float getHours() {
+    public String getHours() {
         return hours;
     }
 
