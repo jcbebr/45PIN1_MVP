@@ -40,7 +40,7 @@ public class MainFrame extends JFrame {
         mainDimension = new Dimension(650, 500); // imagem 665 , 545
         initComponents();
 
-        super.setTitle("Sistema gerenciador do cartão fidelidade");
+        super.setTitle("Sistema gerenciador de PTIs");
         super.setSize(mainDimension);
         super.setVisible(true);
         super.setResizable(false);

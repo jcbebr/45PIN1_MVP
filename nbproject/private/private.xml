@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/view/LoginFrame.java</file>
-            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/view/MainFrame.java</file>
-            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/main/Main.java</file>
-            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/control/Files.java</file>
-            <file>file:/C:/Users/10480989907/Documents/NetBeansProjects/45PIN1_MVP/src/view/MainMenu.java</file>
+            <file>file:/C:/Users/Bruno/Documents/NetBeansProjects/Nova%20Pasta%20(2)/45PIN1_MVP-master/src/view/panels/ChangeOwnDataPanel.java</file>
+            <file>file:/C:/Users/Bruno/Documents/NetBeansProjects/Nova%20Pasta%20(2)/45PIN1_MVP-master/src/view/panels/SearchPanel.java</file>
+            <file>file:/C:/Users/Bruno/Documents/NetBeansProjects/Nova%20Pasta%20(2)/45PIN1_MVP-master/src/control/TeacherFile.java</file>
+            <file>file:/C:/Users/Bruno/Documents/NetBeansProjects/Nova%20Pasta%20(2)/45PIN1_MVP-master/src/view/panels/RegisterTeacherPanel.java</file>
         </group>
     </open-files>
 </project-private>

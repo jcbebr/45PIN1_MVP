@@ -10,8 +10,8 @@ import javax.swing.JMenuItem;
 /**
  * Classe que define o menu principal para a aplicação
  *
- * @author José Carlos, Felipe Rohr, Gabriela Rodrigues, Gabriel Felipe
- * @since 19/04/2018
+ * @author José Carlos, Bruno Galeazzi Rech
+ * @since 10/11/2018
  * @version 1.0
  */
 public class MainMenu extends JMenuBar {
