@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
+import model.Activities;
 import view.MainMenu;
 import view.panels.GeneratePTIsPanel;
 import view.panels.MenuPanel;
@@ -70,6 +71,8 @@ public class MainFrame extends JFrame {
         initMenuPanel(new ChangeOwnDataPanel(this), 1);
         initMenuPanel(new SearchPanel(), 2);
         initMenuPanel(new GeneratePTIsPanel(), 3);
+        
+        
 
     }
 

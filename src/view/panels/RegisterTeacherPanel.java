@@ -1,6 +1,7 @@
 package view.panels;
 
 import javax.swing.DefaultListModel;
+import model.Activities;
 import view.frames.MainFrame;
 
 /**
@@ -13,7 +14,7 @@ public class RegisterTeacherPanel extends MenuPanel {
     private final String[] ACTIVITIES;
 
     public RegisterTeacherPanel(MainFrame frame) {
-        this.ACTIVITIES = new String[]{"Ensino", "Pedagógica", "Orientação", "Extenção", "Administrativa", "Capacitação", "Licensa", "Complementar", "Projeto de Ensino", "Projeto de Pesquisa"};
+        this.ACTIVITIES = (Activities.getStringVetor());
         this.FRAME = frame;
         initComponents();
 
