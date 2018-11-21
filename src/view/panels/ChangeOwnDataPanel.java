@@ -1,6 +1,6 @@
 package view.panels;
 
-import control.Files;
+import control.LoginFile;
 import javax.swing.JOptionPane;
 import view.frames.MainFrame;
 
@@ -26,13 +26,13 @@ public class ChangeOwnDataPanel extends MenuPanel {
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        JB_login = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        JB_comfirm = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jButton3 = new javax.swing.JButton();
 
@@ -40,10 +40,10 @@ public class ChangeOwnDataPanel extends MenuPanel {
 
         jLabel2.setText("Senha:");
 
-        jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        JB_login.setText("Login");
+        JB_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                JB_loginActionPerformed(evt);
             }
         });
 
@@ -61,7 +61,7 @@ public class ChangeOwnDataPanel extends MenuPanel {
                             .addComponent(jLabel1))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jTextField1)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE))
+                    .addComponent(JB_login, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -76,7 +76,7 @@ public class ChangeOwnDataPanel extends MenuPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(JB_login)
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -84,10 +84,10 @@ public class ChangeOwnDataPanel extends MenuPanel {
 
         jLabel4.setText("Nova senha:");
 
-        jButton2.setText("Confirmar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        JB_comfirm.setText("Confirmar");
+        JB_comfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                JB_comfirmActionPerformed(evt);
             }
         });
 
@@ -105,7 +105,7 @@ public class ChangeOwnDataPanel extends MenuPanel {
                             .addComponent(jLabel3))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jTextField4)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE))
+                    .addComponent(JB_comfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -120,7 +120,7 @@ public class ChangeOwnDataPanel extends MenuPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(JB_comfirm)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -164,16 +164,16 @@ public class ChangeOwnDataPanel extends MenuPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void JB_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_loginActionPerformed
 
-        if (Files.doLogin(jTextField1.getText(), jTextField2.getText())) {
+        if (LoginFile.doLogin(jTextField1.getText(), jTextField2.getText())) {
 
             setNewInfoEnabled();
             setOldInfoEnabled();
             jTextField3.requestFocus();
         }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_JB_loginActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         cleanData();
@@ -181,23 +181,23 @@ public class ChangeOwnDataPanel extends MenuPanel {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     public void cleanData() {
-        jButton1.setEnabled(false);
-        jButton2.setEnabled(true);
+        JB_login.setEnabled(false);
+        JB_comfirm.setEnabled(true);
         setNewInfoEnabled();
         setOldInfoEnabled();
     }
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void JB_comfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_comfirmActionPerformed
 
-        if (Files.doRegister("666", jTextField3.getText(), jTextField4.getText())) {
+        if (LoginFile.doRegister("666", jTextField3.getText(), jTextField4.getText())) {
             JOptionPane.showMessageDialog(null, "Dados alterados com sucesso", "Erro", JOptionPane.INFORMATION_MESSAGE);
         }
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_JB_comfirmActionPerformed
 
     private void setOldInfoEnabled() {
         boolean check = true;
-        if (jButton1.isEnabled()) {
+        if (JB_login.isEnabled()) {
             check = false;
         }
         jTextField1.setEnabled(check);
@@ -206,12 +206,12 @@ public class ChangeOwnDataPanel extends MenuPanel {
         jTextField2.setText("");
         jLabel1.setEnabled(check);
         jLabel2.setEnabled(check);
-        jButton1.setEnabled(check);
+        JB_login.setEnabled(check);
     }
 
     private void setNewInfoEnabled() {
         boolean check = true;
-        if (jButton2.isEnabled()) {
+        if (JB_comfirm.isEnabled()) {
             check = false;
         }
         jTextField3.setEnabled(check);
@@ -220,13 +220,13 @@ public class ChangeOwnDataPanel extends MenuPanel {
         jTextField4.setText("");
         jLabel3.setEnabled(check);
         jLabel4.setEnabled(check);
-        jButton2.setEnabled(check);
+        JB_comfirm.setEnabled(check);
     }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton JB_comfirm;
+    private javax.swing.JButton JB_login;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
