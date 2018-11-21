@@ -18,7 +18,8 @@ public enum ActivitiesTypes {
     PROJETODEPESQUISA("Projeto de Pesquisa");
 
     private final String activities;
-
+    private static final ActivitiesTypes[] values = ActivitiesTypes.values();
+    
     //new String[]{"Ensino", "Pedagógica", "Orientação", "Extenção", "Administrativa", "Capacitação", "Licensa", "Complementar", "Projeto de Ensino", "Projeto de Pesquisa"};
     private ActivitiesTypes(String activities) {
         this.activities = activities;
@@ -30,12 +31,15 @@ public enum ActivitiesTypes {
     }
 
     public static String[] getStringVetor() {
-        ActivitiesTypes[] values = ActivitiesTypes.values();
         String[] string = new String[values.length];
         for (int i = 0; i < string.length; i++) {
             string[i] = values[i].toString();
         }
         return string;
+    }
+
+    public static ActivitiesTypes get(int i) {
+        return values[i];
     }
 
 }

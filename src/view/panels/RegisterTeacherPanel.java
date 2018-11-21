@@ -1,11 +1,14 @@
 package view.panels;
 
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import model.Activitie;
 import model.ActivitiesTypes;
 import model.Category;
 import model.Center;
 import model.Clas;
 import model.Departament;
+import model.Teacher;
 import model.Titulation;
 import view.frames.MainFrame;
 
@@ -16,13 +19,15 @@ import view.frames.MainFrame;
 public class RegisterTeacherPanel extends MenuPanel {
 
     private final MainFrame FRAME;
+    private Teacher teacher;
 
     public RegisterTeacherPanel(MainFrame frame) {
         this.FRAME = frame;
+        this.teacher = new Teacher();
         initComponents();
 
         setActivitiesEnabled();
-        
+
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(Center.getStringVetor()));
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(Clas.getStringVetor()));
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(Titulation.getStringVetor()));
@@ -342,7 +347,22 @@ public class RegisterTeacherPanel extends MenuPanel {
 
     private void jbActRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbActRegisterActionPerformed
 
-        model.addElement("asda");
+        try {
+            String name = jTextField9.getText();
+            float hours = Float.parseFloat(jTextField8.getText());
+            ActivitiesTypes activitieType = ActivitiesTypes.get(jComboBox6.getSelectedIndex());
+            Activitie activitie = new Activitie(name, activitieType, hours);
+
+            ArrayList activities = teacher.getActivities();
+            activities.add(activitie);
+
+            model.addElement(activitie.getType().toString() + " - " + activitie.getName());
+
+        } catch (NumberFormatException numberFormatException) {
+            System.out.println(numberFormatException);
+        }
+
+        System.out.println(teacher.toString());
 
     }//GEN-LAST:event_jbActRegisterActionPerformed
 
