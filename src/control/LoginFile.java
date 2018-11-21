@@ -59,34 +59,32 @@ public class LoginFile {
     public static boolean doLogin(String user, String password) {
 
         RandomAccessFile arquivo = loginFile();
-       /* if (user.equalsIgnoreCase("") || password.equalsIgnoreCase("")) {
+        /* if (user.equalsIgnoreCase("") || password.equalsIgnoreCase("")) {
             JOptionPane.showMessageDialog(null, "Campos em branco", "Erro", JOptionPane.ERROR_MESSAGE);
             return false;
-        } else {*/
-            try {
-                arquivo.seek(1);
-                if (arquivo.length() >= 41) {
-                    String fileUser = readChars(arquivo);
-                    String filePassword = readChars(arquivo);
+        } else { }*/
+        try {
+            arquivo.seek(1);
+            if (arquivo.length() >= 41) {
+                String fileUser = readChars(arquivo);
+                String filePassword = readChars(arquivo);
 
-                    if (!fileUser.equals(user)) {
-                        JOptionPane.showMessageDialog(null, "Usuário incorreto", "Erro", JOptionPane.ERROR_MESSAGE);
-                        return false;
-                    }
-                    if (!filePassword.equals(password)) {
-                        JOptionPane.showMessageDialog(null, "Senha incorreta", "Erro", JOptionPane.ERROR_MESSAGE);
-                        return false;
-                    }
-                } else {
-                    JOptionPane.showMessageDialog(null, "Informações incorretas", "Erro", JOptionPane.ERROR_MESSAGE);
+                if (!fileUser.equals(user)) {
+                    JOptionPane.showMessageDialog(null, "Usuário incorreto", "Erro", JOptionPane.ERROR_MESSAGE);
                     return false;
                 }
-
-            } catch (IOException ex) {
-                Logger.getLogger(LoginFile.class.getName()).log(Level.SEVERE, null, ex);
+                if (!filePassword.equals(password)) {
+                    JOptionPane.showMessageDialog(null, "Senha incorreta", "Erro", JOptionPane.ERROR_MESSAGE);
+                    return false;
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Informações incorretas", "Erro", JOptionPane.ERROR_MESSAGE);
+                return false;
             }
-        //}
-        //}
+
+        } catch (IOException ex) {
+            Logger.getLogger(LoginFile.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         return true;
     }
