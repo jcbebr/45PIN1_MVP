@@ -20,4 +20,13 @@ public enum Category {
         return this.category;
     }
 
+    public static String[] getStringVetor() {
+        Category[] values = Category.values();
+        String[] string = new String[values.length];
+        for (int i = 0; i < string.length; i++) {
+            string[i] = values[i].toString();
+        }
+        return string;
+    }
+    
 }

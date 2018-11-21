@@ -15,5 +15,14 @@ public enum Departament {
     private Departament(String dpto) {
         this.dpto = dpto;
     }
+    
+    public static String[] getStringVetor() {
+        Departament[] values = Departament.values();
+        String[] string = new String[values.length];
+        for (int i = 0; i < string.length; i++) {
+            string[i] = values[i].toString();
+        }
+        return string;
+    }
 
 }

@@ -19,4 +19,13 @@ public enum Center {
         return this.center;
     }
 
+    public static String[] getStringVetor() {
+        Center[] values = Center.values();
+        String[] string = new String[values.length];
+        for (int i = 0; i < string.length; i++) {
+            string[i] = values[i].toString();
+        }
+        return string;
+    }
+    
 }

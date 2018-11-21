@@ -9,7 +9,7 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
-import model.Activities;
+import model.ActivitiesTypes;
 import view.MainMenu;
 import view.panels.GeneratePTIsPanel;
 import view.panels.MenuPanel;

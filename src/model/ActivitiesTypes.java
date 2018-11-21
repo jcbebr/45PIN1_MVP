@@ -4,7 +4,7 @@ package model;
  *
  * @author José Carlos
  */
-public enum Activities {
+public enum ActivitiesTypes {
 
     ENSINO("Ensino"),
     PEDAGOGICA("Pedagógica"),
@@ -20,7 +20,7 @@ public enum Activities {
     private final String activities;
 
     //new String[]{"Ensino", "Pedagógica", "Orientação", "Extenção", "Administrativa", "Capacitação", "Licensa", "Complementar", "Projeto de Ensino", "Projeto de Pesquisa"};
-    private Activities(String activities) {
+    private ActivitiesTypes(String activities) {
         this.activities = activities;
     }
 
@@ -30,7 +30,7 @@ public enum Activities {
     }
 
     public static String[] getStringVetor() {
-        Activities[] values = Activities.values();
+        ActivitiesTypes[] values = ActivitiesTypes.values();
         String[] string = new String[values.length];
         for (int i = 0; i < string.length; i++) {
             string[i] = values[i].toString();

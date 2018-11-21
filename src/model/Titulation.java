@@ -20,5 +20,14 @@ public enum Titulation {
     public String toString() {
         return this.titulation;
     }
+    
+    public static String[] getStringVetor() {
+        Titulation[] values = Titulation.values();
+        String[] string = new String[values.length];
+        for (int i = 0; i < string.length; i++) {
+            string[i] = values[i].toString();
+        }
+        return string;
+    }
 
 }
