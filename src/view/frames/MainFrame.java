@@ -1,5 +1,7 @@
-package view;
+package view.frames;
 
+import view.panels.ChangeOwnDataPanel;
+import view.panels.RegisterTeacherPanel;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -7,6 +9,10 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
+import view.MainMenu;
+import view.panels.GeneratePTIsPanel;
+import view.panels.MenuPanel;
+import view.panels.SearchPanel;
 
 /**
  * Tela principal do sistema
@@ -62,8 +68,8 @@ public class MainFrame extends JFrame {
         menuPanels = new MenuPanel[4];
         initMenuPanel(new RegisterTeacherPanel(this), 0);
         initMenuPanel(new ChangeOwnDataPanel(this), 1);
-        //initMenuPanel(new JPanel(), 2);
-        //initMenuPanel(new JPanel(), 3);
+        initMenuPanel(new SearchPanel(), 2);
+        initMenuPanel(new GeneratePTIsPanel(), 3);
 
     }
 

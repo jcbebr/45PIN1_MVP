@@ -1,6 +1,7 @@
-package view;
+package view.panels;
 
 import javax.swing.DefaultListModel;
+import view.frames.MainFrame;
 
 /**
  *

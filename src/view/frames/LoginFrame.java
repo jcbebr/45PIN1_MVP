@@ -1,4 +1,4 @@
-package view;
+package view.frames;
 
 import control.Files;
 import java.awt.Dimension;
@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import view.ClickListener;
 
 /**
  *

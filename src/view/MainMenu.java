@@ -1,5 +1,6 @@
 package view;
 
+import view.frames.MainFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JMenu;

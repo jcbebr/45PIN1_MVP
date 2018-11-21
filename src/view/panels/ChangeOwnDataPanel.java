@@ -1,7 +1,8 @@
-package view;
+package view.panels;
 
 import control.Files;
 import javax.swing.JOptionPane;
+import view.frames.MainFrame;
 
 /**
  *
