@@ -87,7 +87,7 @@ public class MainFrame extends JFrame {
     }
 
     public void goToMainScreen() {
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < menuPanels.length; i++) {
             menuPanels[i].setVisible(false);
             menuPanels[i].setEnabled(false);
             menuPanels[i].cleanData();
