@@ -46,6 +46,7 @@ public class ActivityFile {
     public static void writeActivities(String nomeProfessor, String nomeAtividade, String horas, String tipo) {
         RandomAccessFile arquivo = activityFile();
         try {
+            arquivo.seek(arquivo.length());
             arquivo.writeChars(String.format("%1$35s", nomeProfessor));
             arquivo.writeChars(String.format("%1$35s", nomeAtividade));
             arquivo.writeChars(String.format("%1$5s", horas));
@@ -83,7 +84,7 @@ public class ActivityFile {
             long indice = 0;
             double aux = arquivo.length() / 210;
             for (double i = 0; i < aux; i++) {
-                arquivo.seek(indice + 70);
+                arquivo.seek(indice);
                 String auxNome;
                 auxNome = readString(arquivo, 35);
                 if (auxNome.equalsIgnoreCase(nomeprofessor)) {
@@ -98,6 +99,7 @@ public class ActivityFile {
                 indice += 210;
             }
         } catch (Exception e) {
+            System.out.println("Erro findActivities");
         }
         return atividades;
     }

@@ -30,7 +30,7 @@ public class Activity {
 
     @Override
     public String toString() {
-        return "Activitie{" + "name=" + name + ", type=" + type + ", hours=" + hours + '}';
+        return name + " - " + type + " - " + hours + 'h';
     }
     
     

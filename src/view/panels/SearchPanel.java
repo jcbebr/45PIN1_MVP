@@ -1,6 +1,7 @@
 package view.panels;
 
 import javax.swing.JOptionPane;
+import static view.frames.MainFrame.menuPanels;
 
 /**
  *
@@ -83,19 +84,25 @@ public class SearchPanel extends MenuPanel {
 
     private void btn_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_searchActionPerformed
         long pos = control.TeacherFile.findTeacher(Tf_nome.getText(), Tf_centro.getText());
-        if (pos == -1){
+        if (pos == -1) {
             JOptionPane.showMessageDialog(null, "Professor não encontrado!", "Nada encontrado", JOptionPane.ERROR_MESSAGE);
-        }else{
+        } else {
             cleanData();
             control.TeacherFile.readPos(pos);//pegar os valores e jogar em alguma tela
             /*
             pegar a pos do professor e pegar os dados dele e preencher na outra tela
             pegar o nome e retirar o array de atividades dele e preencher na outra tela
-            */
-                
+             */
+            menuPanels[2].setVisible(false);
+            menuPanels[2].setEnabled(false);
+            menuPanels[2].cleanData();
+            menuPanels[0].setVisible(true);
+            menuPanels[0].setEnabled(true);
+            
+            RegisterTeacherPanel.fillTeacher(pos);
         }
         cleanData();
-        
+
     }//GEN-LAST:event_btn_searchActionPerformed
 
     private void Tf_centroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tf_centroActionPerformed
@@ -104,7 +111,7 @@ public class SearchPanel extends MenuPanel {
 
     @Override
     public void cleanData() {
-        
+
     }
 
 

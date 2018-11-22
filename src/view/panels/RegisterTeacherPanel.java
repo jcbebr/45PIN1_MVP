@@ -1,9 +1,10 @@
 package view.panels;
 
+import static control.TeacherFile.teacherFile;
+import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
-import model.Activity;
 import model.ActivitiesTypes;
 import model.Category;
 import model.Center;
@@ -18,13 +19,43 @@ import view.frames.MainFrame;
  * @author José Carlos
  */
 public class RegisterTeacherPanel extends MenuPanel {
-
+    private static ArrayList atividades = new ArrayList();
     private final MainFrame FRAME;
-    private Teacher teacher;
+
+    public static void fillTeacher(long pos) {
+        String nome, centro, classe, regime, titulacao, departamento, categoria;
+        RandomAccessFile arquivo = teacherFile();
+        try {
+            control.ActivityFile.readActivities();
+            arquivo.seek(pos);
+            nome = control.TeacherFile.readString(arquivo, 35);
+            centro = control.TeacherFile.readString(arquivo, 10);
+            classe = control.TeacherFile.readString(arquivo, 15);
+            regime = control.TeacherFile.readString(arquivo, 30);
+            titulacao = control.TeacherFile.readString(arquivo, 10);
+            departamento = control.TeacherFile.readString(arquivo, 4);
+            categoria = control.TeacherFile.readString(arquivo, 10);
+            atividades = control.ActivityFile.findActivities(nome);
+            Tf_Nome.setText(nome);
+            Combo_centro.setSelectedItem(centro);
+            Combo_classe.setSelectedItem(classe);
+            Tf_regime.setText(regime);
+            Combo_titulacao.setSelectedItem(titulacao);
+            Combo_departamento.setSelectedItem(departamento);
+            Combo_categoria.setSelectedItem(categoria);
+            for (int i = 0; i < atividades.size(); i++) {
+                System.out.println(atividades.get(i).toString());
+                model.addElement(atividades.get(i).toString());
+            }
+        } catch (Exception e) {
+            System.out.println("Erro FIller");
+        }
+
+    }
 
     public RegisterTeacherPanel(MainFrame frame) {
         this.FRAME = frame;
-        this.teacher = new Teacher();
+       // this.teacher = new Teacher();
         initComponents();
 
         setActivitiesEnabled();
@@ -60,7 +91,7 @@ public class RegisterTeacherPanel extends MenuPanel {
         jLabel8 = new javax.swing.JLabel();
         jbActNew = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>(model);
+        JList_atividades = new javax.swing.JList<>(model);
         jbActEdit = new javax.swing.JButton();
         jbActDelete = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
@@ -158,7 +189,7 @@ public class RegisterTeacherPanel extends MenuPanel {
             }
         });
 
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(JList_atividades);
 
         jbActEdit.setText("Editar Atividade");
         jbActEdit.addActionListener(new java.awt.event.ActionListener() {
@@ -342,7 +373,7 @@ public class RegisterTeacherPanel extends MenuPanel {
 
     private void jbActEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbActEditActionPerformed
 
-        jList1.getSelectedIndex();
+        JList_atividades.getSelectedIndex();
 
         setActivitiesEnabled();
     }//GEN-LAST:event_jbActEditActionPerformed
@@ -351,8 +382,8 @@ public class RegisterTeacherPanel extends MenuPanel {
 
         try {
             control.ActivityFile.writeActivities(Tf_Nome.getText(), TF_nomeAtiv.getText(), TF_cargaH.getText(), Combo_tipo.getSelectedItem().toString());
-            model.addElement(Combo_tipo.getSelectedItem().toString() + " - " + TF_nomeAtiv.getText());
-
+            
+            model.addElement(TF_nomeAtiv.getText() + " - " + Combo_tipo.getSelectedItem().toString() + " - " + TF_cargaH.getText() + "h");
         } catch (NumberFormatException numberFormatException) {
             System.out.println(numberFormatException);
         }
@@ -361,16 +392,18 @@ public class RegisterTeacherPanel extends MenuPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> Combo_categoria;
-    private javax.swing.JComboBox<String> Combo_centro;
-    private javax.swing.JComboBox<String> Combo_classe;
-    private javax.swing.JComboBox<String> Combo_departamento;
+    private static javax.swing.JComboBox<String> Combo_categoria;
+    private static javax.swing.JComboBox<String> Combo_centro;
+    private static javax.swing.JComboBox<String> Combo_classe;
+    private static javax.swing.JComboBox<String> Combo_departamento;
     private javax.swing.JComboBox<String> Combo_tipo;
-    private javax.swing.JComboBox<String> Combo_titulacao;
+    private static javax.swing.JComboBox<String> Combo_titulacao;
+    private static DefaultListModel<String> model = new DefaultListModel<>();
+    private static javax.swing.JList<String> JList_atividades;
     private javax.swing.JTextField TF_cargaH;
     private javax.swing.JTextField TF_nomeAtiv;
-    private javax.swing.JTextField Tf_Nome;
-    private javax.swing.JTextField Tf_regime;
+    private static javax.swing.JTextField Tf_Nome;
+    private static javax.swing.JTextField Tf_regime;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -382,8 +415,6 @@ public class RegisterTeacherPanel extends MenuPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private DefaultListModel<String> model = new DefaultListModel<>();
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

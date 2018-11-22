@@ -29,7 +29,7 @@ public class MainFrame extends JFrame {
     private Container contentPane;
     private JMenuBar mainMenu;
 
-    private MenuPanel[] menuPanels;
+    public static MenuPanel[] menuPanels;
 
     /**
      * Construtor da classe Frame Sistema.

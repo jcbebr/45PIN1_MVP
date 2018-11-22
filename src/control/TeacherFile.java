@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  */
 public class TeacherFile {
 
-    private static RandomAccessFile teacherFile() {
+    public static RandomAccessFile teacherFile() {
 
         String diretorio = "arquivos";
         String endereco = diretorio + "\\teacher.dat";
@@ -32,7 +32,7 @@ public class TeacherFile {
         return file;
     }
 
-    private static String readString(RandomAccessFile arquivo, int chars) throws IOException {
+    public static String readString(RandomAccessFile arquivo, int chars) throws IOException {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < chars; i++) {
             sb.append(arquivo.readChar());
